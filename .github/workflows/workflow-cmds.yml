@@ -60,7 +60,7 @@ jobs:
           echo "- Annotations" >> $GITHUB_STEP_SUMMARY
           echo "- Logs" >> $GITHUB_STEP_SUMMARY
           echo "- Groups" >> $GITHUB_STEP_SUMMARY
-          echo "- Output from previous step: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
           echo "- Variable from previous step: $COMPANY_VAR" >> $GITHUB_STEP_SUMMARY
           echo "- Secret Key from previous step: $key" >> $GITHUB_STEP_SUMMARY
-          echo "![KodeKloud](https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/68805dd7-e7db-45b6-a08e-3e16559ad183.png)" >> $GITHUB_STEP_SUMMARY
+          echo "- Output from previous step: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
+          echo "![KodeKloud](https://kodekloud.com/wp-content/uploads/2021/10/kk-logo.png)" >> $GITHUB_STEP_SUMMARY
