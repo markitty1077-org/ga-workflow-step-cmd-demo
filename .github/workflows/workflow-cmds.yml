@@ -65,5 +65,5 @@ jobs:
 
       - name: Write job summary
         run: |
-          SUMMARY= ${{ steps.generate_data.outputs.stdout }})
+          SUMMARY= ${{ steps.generate_data.outputs.stdout }}
           echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
