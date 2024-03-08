@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set environment variable
-        run: echo "HELLO_VAR=World" >> $GITHUB_ENV
+        run: echo "COMPANY_VAR=KodeKloud" >> $GITHUB_ENV
 
       - name: Show environment variable
-        run: echo "Hello, $HELLO_VAR!"
+        run: echo "Hello, $COMPANY_VAR!"
 
       - name: Grouping log lines
         run: |
@@ -56,13 +56,11 @@ jobs:
           echo "- Debug" >> $GITHUB_STEP_SUMMARY 
           echo "- Mask" >> $GITHUB_STEP_SUMMARY
           echo "- Output" >> $GITHUB_STEP_SUMMARY
-          echo "* Output: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
           echo "- Variable" >> $GITHUB_STEP_SUMMARY
-          echo "* Variable: $HELLO_VAR" >> $GITHUB_STEP_SUMMARY
           echo "- Annotations" >> $GITHUB_STEP_SUMMARY
           echo "- Logs" >> $GITHUB_STEP_SUMMARY
           echo "- Groups" >> $GITHUB_STEP_SUMMARY
-          echo "- Output: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Variable: $HELLO_VAR" >> $GITHUB_STEP_SUMMARY
-          echo "- Secret Key: $key" >> $GITHUB_STEP_SUMMARY
+          echo "- Output from previous step: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Variable from previous step: $COMPANY_VAR" >> $GITHUB_STEP_SUMMARY
+          echo "- Secret Key from previous step: $key" >> $GITHUB_STEP_SUMMARY
           echo "![KodeKloud](https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/68805dd7-e7db-45b6-a08e-3e16559ad183.png)" >> $GITHUB_STEP_SUMMARY
