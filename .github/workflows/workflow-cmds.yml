@@ -52,7 +52,13 @@ jobs:
       - name: Job Summary
         run: |
           echo "### Awesome Job Summary :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "## Used Workflow Commands" >> $GITHUB_STEP_SUMMARY
+          echo "- Debug >> $GITHUB_STEP_SUMMARY" 
+          echo "- Mask >> $GITHUB_STEP_SUMMARY" 
+          echo "- Output >> $GITHUB_STEP_SUMMARY" 
+          echo "- Variable >> $GITHUB_STEP_SUMMARY"
+          echo "- Annotations >> $GITHUB_STEP_SUMMARY" 
+          echo "- Logs >> $GITHUB_STEP_SUMMARY"
+          echo "- Groups >> $GITHUB_STEP_SUMMARY" 
           echo "- Output: ${{ steps.my_output.outputs.myOutput }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Variable: $HELLO_VAR" >> $GITHUB_STEP_SUMMARY" 
-          echo "- Key: $key" >> $GITHUB_STEP_SUMMARY"
-          echo "KodeKloud ![https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/68805dd7-e7db-45b6-a08e-3e16559ad183.png]" >> $GITHUB_STEP_SUMMARY
+          echo "![KodeKloud](https://gdm-catalog-fmapi-prod.imgix.net/ProductScreenshot/68805dd7-e7db-45b6-a08e-3e16559ad183.png)" >> $GITHUB_STEP_SUMMARY
