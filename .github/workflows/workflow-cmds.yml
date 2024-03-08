@@ -51,19 +51,3 @@ jobs:
 
       - name: Job Summary
         run: echo "### Awesome Job Summary :rocket:" >> $GITHUB_STEP_SUMMARY
-
-      - name: Generate table data
-        # Simulate data generation (replace with your actual logic)
-        id: generate_data
-        run: |
-          echo "::group::Data Generation"
-          echo "Name,Value"
-          echo "Output,${{ steps.my_output.outputs.myOutput }}"
-          echo "Variable,$HELLO_VAR"
-          echo "Secret,$key"
-          echo "::endgroup::"
-
-      - name: Write job summary
-        run: |
-          SUMMARY= ${{ steps.generate_data.outputs.stdout }}
-          echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
