@@ -9,10 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set environment variable
-        run: echo "HELLO=World" >> $GITHUB_ENV
+        run: echo "HELLO_VAR=World" >> $GITHUB_ENV
 
       - name: Show environment variable
-        run: echo "Hello, $HELLO!"
+        run: echo "Hello, $HELLO_VAR!"
 
       - name: Grouping log lines
         run: |
@@ -51,3 +51,20 @@ jobs:
 
       - name: Job Summary
         run: echo "### Awesome Job Summary :rocket:" >> $GITHUB_STEP_SUMMARY
+
+      - name: Generate table data
+        # Simulate data generation (replace with your actual logic)
+        id: generate_data
+        run: |
+          echo "::group::Data Generation"
+          echo "Name,Value"
+          echo "Output,${{ steps.my_output.outputs.myOutput }}"
+          echo "Variable,$HELLO_VAR"
+          echo "Secret,$key"
+          echo "::endgroup::"
+
+      - name: Write job summary
+        run: |
+          SUMMARY=$'## Job Summary\n'
+          SUMMARY+=$(< ${{ steps.generate_data.outputs.stdout }})  # Capture table data
+          echo "$SUMMARY" >> $GITHUB_STEP_SUMMARY
