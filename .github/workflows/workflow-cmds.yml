@@ -30,7 +30,7 @@ jobs:
           echo "::add-mask::$key"
           echo "Masked key = $key"
 
-      - name: Create a warning
+      - name: Create a warning annotation
         run: echo "::warning::This is a warning message."
 
       - name: Create an error annotation
